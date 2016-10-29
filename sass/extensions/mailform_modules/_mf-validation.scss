@@ -1,0 +1,32 @@
+/*
+* MF Validation
+*/
+
+$rd-validation-color: #ff9786;
+
+.mfValidation {
+  position: absolute;
+  top: 6px;
+  padding-left: nth($input-padding, 2);
+  right: 10px;
+  color: $rd-validation-color;
+  font-weight: $input-font-weight;
+  font-size: 11px;
+  line-height: 20px;
+  opacity: 0;
+  cursor: text;
+  visibility: hidden;
+  z-index: 997;
+  pointer-events: none;
+  transition: .3s all ease;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.hide, &.valid {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

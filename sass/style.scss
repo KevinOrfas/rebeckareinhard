@@ -1,0 +1,1263 @@
+/*
+* @package      Style
+* @description  This package holds all common style declarations
+*               of the site
+*/
+
+@import "_variables.scss";
+@import "includes/_mixins.scss";
+
+@import "includes/_normalize.scss";
+@import "modules/_page-layouts.scss";
+@import "modules/tm-grid/_tm-grid.scss";
+
+
+/*
+* @section      Icon Fonts
+* @description  This section holds all icon fonts stored in template
+*/
+
+@import "fonts/_font-awesome.scss";
+@import "fonts/_material-icons"; 
+
+/*
+* @section      Main Styles
+* @description  This section holds template default elements style declarations
+*/
+
+html {
+  font-size: 60px;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+    font-size: 70px;
+  }
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1) {
+    font-size: 80px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 100px;
+  }
+
+  .old-ie {
+    display: none;
+  }
+
+  &.lt-ie11 {
+    .old-ie{
+      display: block;
+    }
+  }
+}
+
+
+body {
+  font-family: $default-font-family;
+  font-weight: $default-font-weight;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: none;
+  color: $content-color;
+  background: $content-bg;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+  }
+}
+
+
+/*
+* @subsection   Typography
+* @description  Describes default font settings for basic html elements and
+*               css classes
+*/
+
+h1, h2, h3, h4, h5, h6,
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+  display: block;
+  font-weight: 400;
+  font-family: $secondary-font-family;
+
+  a:hover {
+    color: $primary;
+  }
+}
+
+h1, .heading-1 {
+  font-size: 38px;
+  line-height: 1.33;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 86px;
+    line-height: 1.16;
+  }
+
+  > .heading-2{
+    margin-bottom: rem(33px);
+  }
+}
+
+h2, .heading-2 {
+  font-size: 40px;
+  line-height: 1.3;
+  color: $grayscale-darken;
+
+  &--mod1 {
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 52px;
+    }
+    @media (min-width: $screen-md-min) {
+      font-size: 60px;
+      line-height: 1.05;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 52px;
+  }
+  @media (min-width: $screen-md-min) {
+    font-size: 60px;
+    line-height: 1;
+  }
+}
+
+h3, .heading-3 {
+  font-size: 30px;
+  line-height: 1.4;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 50px;
+    line-height: 1;
+  }
+}
+
+h4, .heading-4 {
+  font-size: 26px;
+  color: $grayscale-darken;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 30px;
+    line-height: 1;
+  }
+}
+
+h5, .heading-5 {
+  font-family: $default-font-family;
+  font-size: 22px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+
+h6, .heading-6 {
+  font-size: 18px;
+  font-family: $default-font-family;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 18px;
+    line-height: 1.66;
+  }
+}
+
+p, .list, .contact-info {
+  /*font-weight: 300;*/
+
+  a:hover {
+    color: $primary;
+  }
+}
+
+mark {
+  display: inline-block;
+  padding: 5px;
+  color: #FFF;
+  background: $primary;
+}
+
+em {
+  color: $primary;
+}
+
+small, .small {
+  display: block;
+  font-size: 0.875em;
+  line-height: 1.643em;
+}
+
+.big {
+  font-size: 1.2em;
+}
+
+time {
+  &:before{
+    padding-right: 8px;
+  }
+}
+
+hr{
+  height: 1px;
+  width: 100%;
+  display: none;
+  padding: 0;
+  background: rgba($default, 0.04);
+}
+
+
+/*
+* @section      Main Layout
+* @description  This section holds class declarations for elements indent creation
+*/
+
+/*
+* @subsection   Offsets
+* @description  Describes vertical indentation between the elements
+*/
+
+
+.sign-block + .arrow1 {
+  margin-top: 2%;
+  @media (min-width: $screen-sm-min) {margin-top: 2%;}
+  @media (min-width: 1290px) {margin-top: 5%;}
+}
+
+h6 + h2 {margin-top: 35px;}
+h2 + .btn {margin-top: 39px;}
+h2 + p {
+  margin-top: 30px;
+  @media (min-width: $screen-sm-min) {margin-top: 60px;}
+}
+p + .btn {margin-top: 30px;
+@media (min-width: $screen-sm-min) {margin-top: 71px;}}
+img + h6 {margin-top: 25px;}
+h6 + h4 {margin-top: 4px;}
+.copyright-txt + .inline-list {margin-top: 34px;}
+
+* + h1 {
+}
+
+* + h2 {
+
+}
+
+* + h3 {
+}
+
+* + h4 {
+
+}
+
+* + h5{
+
+}
+
+* + h6 {
+}
+
+* + p {
+
+}
+
+* + img {
+
+}
+
+* + .btn{
+
+}
+
+* + .link {
+
+}
+
+* + .list{
+
+}
+
+* + .index-list {
+
+}
+
+* + .marked-list {
+
+}
+
+* + .ordered-list {
+}
+
+* + .inline-list {
+
+}
+
+* + .contact-info {
+
+}
+
+* + .btn-group{
+
+}
+
+* + .box,
+* + .box-xs,
+* + .box-sm,
+* + .box-md,
+* + .box-lg {
+
+}
+
+* + .row{
+
+}
+
+* + .container {
+
+}
+
+* + .container-fluid{
+  margin-top: 66px;
+}
+
+* + .rd-mailform{
+
+}
+
+.page-content .offset {
+  &-0 {
+    margin-top: 0;
+  }
+
+  &-1 {
+    @media (min-width: $screen-md-min) {margin-top: -12px;}
+  }
+
+  &-2 {
+
+  }
+
+  &-3 {
+  }
+}
+
+* + time{
+
+}
+
+p + p{
+
+}
+
+.box, .box-xs, .box-sm, .box-md, .box-lg {
+  & + .box,
+  & + .box-xs,
+  & + .box-sm,
+  & + .box-md,
+  & + .box-lg {
+
+  }
+}
+
+.flow-offset-1 {
+  @include make-flow-offset(30px);
+}
+
+.container {
+  .rd-navbar-search-results{
+    .result-item + .result-item{
+      margin-top: 30px;
+    }
+  }
+}
+
+
+/*
+* @subsection   Postfix
+* @description  Describes instant right margin classes
+*/
+.js-postfix-1 {
+  margin-right: -366px;
+}
+.postfix {
+  &-1 {
+    /*@media (min-width: $screen-sm-min) {margin-right: -15px; margin-left: -14px;}*/
+    @media (min-width: $screen-lg-min) {margin-right: -16px; margin-left: -14px;}
+  }
+  &-2 {
+
+  }
+
+}
+
+
+/*
+* @subsection   Prefix
+* @description  Describes instant left margin classes
+*/
+
+.preffix-1 {
+
+}
+
+
+/*
+* @subsection   Insets
+* @description  Describes instant padding classes
+*/
+
+.inset {
+  &-1 {
+    @media (min-width: $screen-lg-min) {padding-right: 30px;}
+  }
+
+  &-2 {
+    @media (min-width: $screen-sm-min) {
+      padding-left: 100px;
+    }
+  }
+
+  &-3 {
+
+  }
+}
+
+
+/*
+* @subsection   Well
+* @description  Describes section inner indents
+*/
+
+.well-xs, .well-xs.page-footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.page .well-sm {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media (min-width: $screen-sm-min) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.well-md {
+  padding-top: rem(100px);
+  padding-bottom: rem(106px);
+
+  &--inset1 {
+    padding-top: rem(117px);
+    padding-bottom: rem(118px);
+  }
+
+  &--inset2 {
+    padding-top: rem(117px);
+    padding-bottom: 45px;
+  }
+
+  &--inset3 {
+    padding-bottom: rem(143px);
+  }
+}
+
+.well-lg {
+  padding-top: 5%;
+  @media (min-width: $screen-sm-min) {padding-top: 5%;}
+  @media (min-width: 1290px) {padding-top: 14%;}
+  padding-bottom: 5%;
+
+
+}
+
+.well-xl {
+  padding-top: rem(150px);
+  padding-bottom: rem(145px);
+}
+
+/*
+* @section      Helpers
+* @description  This section holds various helper classes for
+*               conditional page styling
+*/
+
+.round {
+  border-radius: 50%;
+}
+
+.viewport-height {
+  .desktop & {
+    min-height: 100vh;
+
+  }
+}
+
+/*
+* @subsection   Colors
+*/
+
+html body .page { // Increases specificity to use with background helpers
+  .text-primary {
+    color: $primary;
+  }
+}
+
+
+/*
+* @subsection   Backgrounds
+*/
+.bg-primary {
+  background: $primary;
+
+  &, #{headings()}{
+    color: $white;
+  }
+
+  .icon-primary{
+    color: $white;
+    border-color: $white;
+    background: transparent;
+    box-shadow: $box-shadow-ambient;
+  }
+  
+  p, .list, .terms-list{
+    a:hover{
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.bg-default {
+  position: relative;
+
+  .container, .row, > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -50px;
+    @media (min-width: $screen-xs-min) {left: 0;}
+    width: 10000px;
+    content: "";
+    background: #fff;
+    z-index: 0;
+  }
+
+
+  &--variant-2 {
+     &:before{
+      background: $grayscale-lightest;
+     }
+
+     .btn-default {
+      background: #fff;
+      border-color: #e4e4e4;
+    }
+  }
+
+
+  &--variant3 {
+     &:before{
+      left: -115px;
+     }
+  }
+}
+
+.bg-default-variant-4 {
+  background: $grayscale-lightest;
+  position: relative;
+
+  .big {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    z-index: 1;
+    right: 50px;
+    text-align: right;
+    font-size: 200px;
+    line-height: 1.4;
+    text-indent: 20px;
+    display:table-cell;
+    vertical-align: middle;
+    top: 50%;
+    @include transform(translateY(-50%));
+    @media (max-width: 767px) {
+        display: none;
+    }
+    
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 350px;
+      line-height: 1.4;
+      text-indent: 340px;
+      text-align: center;
+      top: 0;
+      @include transform(translateY(0%));
+      right: 50px;
+    }
+    @media (max-width: 1250px) {
+      text-indent: 290px;
+    }
+    
+
+
+
+  }
+
+  .z2 {z-index: 2;}
+
+  .btn-default {
+    background: #fff;
+    border-color: #e4e4e4;
+  }
+}
+
+.bg-white{
+  position: relative;
+  background: #fff;
+}
+
+
+@import "helpers/_floating.scss";
+@import "helpers/_text-alignment.scss";
+@import "helpers/_text-styling.scss";
+@import "helpers/_animate.scss";
+
+/*
+* @section      Components
+* @description  This section holds all elements style declarations of template
+*/
+
+/*
+ * @subsection   Box
+ */
+@import "modules/tm-box/_boxes.scss";
+
+.box {
+
+}
+
+/*
+* @subsection   Quote
+*/
+.quote{
+
+}
+
+/*
+* @subsection   Pricing Box
+*/
+
+.pricing-box{
+
+}
+
+/*
+* @subsection   Breadcrumbs
+*/
+
+.breadcrumbs{
+
+}
+
+/*
+* @subsection   Post
+*/
+
+.post{
+
+}
+
+/*
+* @subsection   List
+*/
+
+.list{
+  li + li{
+    margin-top: 10px;
+  }
+}
+
+/*
+* @subsection   Inline List
+*/
+
+.inline-list {
+  @include transform(translateY(-30px));
+  margin-bottom: -30px;
+  margin-left: -14px;
+
+
+  > li {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 14px;
+  }
+}
+
+
+/*
+* @subsection   Marked List
+*/
+
+.marked-list {
+  text-align: left;
+
+  > li {
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      content: "\f105";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 400;
+      font-size: 1em;
+      font-family: $fa;
+      color: $primary;
+    }
+
+    & + li {
+      margin-top: 10px;
+    }
+
+    > a:hover {
+      color: $primary;
+    }
+  }
+}
+
+
+/*
+* @subsection   Index List
+*/
+
+.index-list {
+  counter-reset: li;
+
+  > li {
+    > .index-list__counter{
+      &:before {
+        content: counter(li, decimal-leading-zero) '.';
+        counter-increment: li;
+      }
+    }
+  }
+
+  // Sets offset between list rows
+  @include make-flow-offset(30px);
+}
+
+
+/*
+* @subsection   Ordered List
+*/
+
+.ordered-list {
+  > li {
+    padding-left: 20px;
+    list-style-type: decimal;
+  }
+}
+
+
+/*
+* @subsection   Terms  List
+*/
+
+.terms-list {
+  > dt + dd {
+    margin-top: 10px;
+  }
+
+  > dd + dt {
+    margin-top: 20px;
+  }
+}
+
+
+/*
+* @subsection   Contact Info
+*/
+
+.contact-info {
+  p {
+  }
+
+  dl {
+    dt, dd {
+      display: inline-block;
+    }
+
+    dt:after {
+      content: ':';
+    }
+
+    dt {
+      min-width: 80px;
+    }
+  }
+}
+
+
+/*
+* @subsection   Counter
+*/
+
+.counter{
+
+}
+
+
+/*
+* @subsection   Thumb
+*/
+
+.thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  > img {
+    width: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba($grayscale-darken, .0);
+    opacity: 1;
+    text-align: center;
+    transition: .3s all ease;
+
+    > *{
+      vertical-align: middle;
+      @include transform(translateY(30px));
+      transition: .3s all ease;
+    }
+
+    &:before{
+      /*content: '';*/
+      display: inline-block;
+      height: 50%;
+    }
+  }
+
+  .video_sign {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: url(../images/video_sign.png) 50% 50% no-repeat;
+    transition: .4s all ease;
+  }
+
+  &:hover {
+    .thumb__overlay {
+      opacity: 1;
+
+      > *{
+        @include transform(translateY(0));
+      }
+    }
+
+    .video_sign {
+      @include opacity(0.5);
+    }
+  }
+}
+
+
+
+/*
+* @subsection   events
+*/
+.event-wrapper {
+  overflow: hidden;
+  .event {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 50%;
+    @media (min-width: $screen-md-min) {width: 33.33333%;}
+    @media (min-width: $screen-lg-min) {width: 20%;}
+    background: #000;
+
+    &:before {
+      position: absolute;
+      display: inline-block;
+      content: '';
+      left: 50%;
+      margin-left: -12px;
+      top: -12px;
+      @include triangle(bottom, 24px, 12px, #fff);
+      transition: .4s all ease;
+      @include opacity(0);
+      z-index: 11;
+
+
+    }
+
+    &:hover:before {
+      top: 0;
+      @include opacity(1);
+    }
+
+    &:hover {
+      img {
+        @include transform(scale(1.1));
+      }
+      time {
+        @include transform(scale(0.9));
+      }
+    }
+
+    img {
+      width: 100%; 
+      transition: .7s all ease-in-out; 
+      position: relative; 
+      z-index: 0;
+    }
+
+    .event-block {
+      position: absolute;
+      z-index: 1;
+      text-align: center;
+      width: 100%;
+      top: 50%;
+      @include transform(translateY(-50%));
+      color: #fff;
+
+      time{
+        font-family: $secondary-font-family;
+        font-size: 28px;
+        line-height: 1.2;
+        transition: .4s all ease;
+        @media (min-width: $screen-sm-min) {font-size: 60px;}
+      }
+
+      .heading-4 {
+        @media (max-width: $screen-sm-min) {font-size: 20px;}
+      }
+
+      a {
+        color: #fff;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          display: inline-block;
+          content: '';
+          width: 1%;
+          height: 3px;
+          left: -110%;
+          right: 100%;
+          top: 100%;
+          background: #fff;
+          transition: .4s all ease;
+        }
+
+        &:hover {
+          color: rgba(#fff, 0.8);
+          text-decoration: none;
+
+          &:before {
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+* @subsection img-wrapper
+*/
+.img-wrapper {
+  position: relative;
+  @media (min-width: $screen-sm-min) {margin-right: -440px;}
+  img {
+    width: 100%;
+  }
+}
+
+/*
+* @subsection arrows
+*/
+.arrow-left {
+  position: relative;
+  &:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    top: 50%;
+    margin-top: -12px;
+    right: -1px;
+    @include triangle(left, 12px, 21px, #fff);
+    transition: .4s all ease;
+  }
+
+  &--mod2 {
+    &:after {
+      right: auto;
+      left: -112px;
+    }
+  }
+}
+
+.arrow-right {
+  position: relative;
+  &:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    top: 50%;
+    margin-top: -12px;
+    left: -2px;
+    @include triangle(right, 13px, 21px, #fff);
+    transition: .4s all ease;
+    z-index: 20;
+  }
+}
+
+
+/*
+* @subsection text-section
+*/
+.text-section {
+  position: relative;
+  @media (min-width: $screen-sm-min) {margin-right: -15px;}
+
+  .text-section__txt {
+    position: absolute;
+    left: 4%;
+    bottom: 4%;
+    @media (min-width: $screen-sm-min) {
+      left: 13%;
+      bottom: 14%;
+    }
+    /*@include transform(translateY(-50%));*/
+
+    h2 {color: #fff;}
+    .text-section__txt2 {
+      margin-top: 14%;
+      padding: 10px;
+      @media (min-width: $screen-sm-min) {padding: 7% 9% 7% 13%;}
+      background: #fff;
+      display: inline-block;
+    }
+
+  }
+}
+
+
+/*
+* @subsection audio player
+*/
+.audio-player {
+  padding: 43px 110px 49px 71px;
+  padding: 20px;
+
+  @media (min-width: $screen-md-min) {padding: 31px 110px 31px 71px;}
+
+  iframe#audio-player-iframe {
+    width: 100%;
+    height: 188px;
+    overflow: hidden;
+    //frameborder="no"
+  }
+
+  iframe #widget .g-background-default {
+    background: none !important;
+  }
+}
+
+
+
+/*
+* @subsection   Link
+*/
+
+.link {
+  display: inline-block;
+}
+
+
+/*
+* @subsection   Video
+*/
+
+.video {
+  position: relative;
+  padding-bottom: percentage(340 / 570); // percentage( Height / Width ) on PSD
+
+  > iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//*
+//Imports
+//*
+
+@import "components/_buttons.scss";
+@import "components/_icons.scss";
+
+
+/*
+* @section      Extensions
+* @description  This section holds some of style declarations for necessary
+*               scripts
+*/
+
+@import "extensions/_rd-mailform.scss";
+@import "extensions/_rd-google-map.scss";
+@import "extensions/_owl-carousel.scss";
+@import "extensions/_rd-parallax.scss";
+@import "extensions/_ui-to-top.scss";
+@import "extensions/_magnific-popup.scss";
+@import "extensions/_responsive-tabs.scss";
+
+/*
+* @section      Page Header
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page header
+*/
+
+.page-header {
+  text-align: center;
+  color: #fff;
+
+}
+
+
+
+
+/*
+* @subsection Brand
+*/
+.brand {
+  display: inline-block;
+  font-family: $default-font-family;
+  &__name{
+    overflow: hidden;
+    text-transform: none;
+    margin-top: 31px;
+    font-size: 60px;
+    line-height: 1.3;
+    @media (min-width: $screen-sm-min) {
+      font-size: 120px;
+      line-height: 1;
+      padding-bottom: 16px;
+    }
+
+    a {
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  &__slogan{
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
+
+/*
+* @subsection sign-block
+*/
+.sign-block {
+  font-size: 14px;
+  line-height: 32px;
+  position: relative;
+  // visibility: hidden;
+
+  span + span {margin-left: 44px;}
+
+  // &:before, &:after {
+  //   position: absolute;
+  //   display: inline-block;
+  //   content: '';
+  //   width: 97px;
+  //   height: 1px;
+  //   left: 50%;
+  //   top: 50%;
+  //   background: #fff;
+  //   @include transform(translateX(-50%) translateY(-50%) rotate(45deg));
+  // }
+
+  // &:after {
+  //   @include transform(translateX(-50%) translateY(-50%) rotate(-45deg));
+  // }
+
+}
+
+
+/*
+* @section      Page Content
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page content
+*/
+
+.page-content {
+  .desktop & {
+    min-height: 100vh;
+  }
+}
+
+/*
+* @section      Page Footer
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page footer
+*/
+
+.page-footer {
+  &, #{headings()}{
+    color: $white;
+  }
+  position: relative;
+  z-index: 2;
+  padding: 110px 0 200px;
+  font-family: $secondary-font-family;
+
+  .copyright-txt {
+    font-size: 14px;
+    font-family: $default-font-family;
+  }
+
+  h3 + p {
+    font-size: 18px;
+    margin-top: 18px;
+    color: rgba(#fff,0.6);
+  }
+
+  p + .rd-mailform{margin-top: 55px;}
+
+}
+
+.copyright {
+  
+}

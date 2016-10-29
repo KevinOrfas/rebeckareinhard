@@ -1,0 +1,56 @@
+@import "_variables.scss";
+
+/*
+* @package      Shortcodes
+* @description  This package holds style declarations for
+*               shortcodes page
+*/
+
+.icon-short-code {
+  font-size: 16px;
+
+  .box__left {
+    padding-right: 10px;
+    color: darken($contrast, 20%);
+  }
+}
+
+/*
+ * @subsection   Icon Box
+ */
+.icon-box {
+  position: relative;
+  /*padding: 10px 20px 10px 55px;*/
+  padding: 5px 0 5px 35px;
+  transition: .3s all ease;
+  border-radius: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: Arial;
+}
+
+.icon-box:hover {
+  color: #fff;
+  /* background: darken($primary, 2%);
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.11); */
+}
+
+.icon-box:before {
+  position: absolute;
+  left: 0px;
+  font-size: 1.4em;
+}
+
+
+.shortcodes {
+  h2 + .btn-group, .btn-group + h2, .container + .container, h2 + .inline-list, h2 + .responsive-tabs, h4 + .rd-mailform {margin-top: 35px;}
+
+  * + .bg-default-variant2 {margin-top: 60px;}
+
+  .responsive-tabs {
+    html.lt-ie10 * + [class*='col-'], html.lt-ie10 * + .row, * + [class*='col-'], * + .row {
+      margin-top: 0px;
+    }
+  }
+
+}

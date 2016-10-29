@@ -1,0 +1,164 @@
+/*
+* @subsection   Icons
+*/
+
+$icon-xs-size: 60px;
+$icon-xs-fz: 28px;
+
+$icon-sm-size: 74px;
+$icon-sm-fz: 24px;
+
+$icon-md-size: 80px;
+$icon-md-fz: 30px;
+
+$icon-lg-size: 90px;
+$icon-lg-fz: 36px;
+
+$icon-xl-size: 108px;
+$icon-xl-fz: 44px;
+
+// Icon General Styles
+.icon {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border-style: solid;
+}
+
+
+// Icon Sizing Styles
+.icon-xs{
+  width: $icon-xs-size;
+  height: $icon-xs-size;
+  line-height: $icon-xs-size - 4;
+  font-size: $icon-xs-fz;
+  border-width: 2px;
+}
+
+.icon-sm {
+  width: $icon-sm-size;
+  height: $icon-sm-size;
+  line-height: $icon-sm-size - 4;
+  font-size: $icon-sm-fz;
+  border-width: 2px;
+}
+
+.icon-md {
+  width: $icon-md-size;
+  height: $icon-md-size;
+  line-height: $icon-md-size - 4;
+  font-size: $icon-md-fz;
+  border-width: 2px;
+}
+
+$icon-md-variant-1-size: 70px;
+$icon-md-variant-1-fz: 70px;
+
+.icon-md-variant-1 {
+  width: $icon-md-variant-1-size;
+  height: $icon-md-variant-1-size;
+  line-height: $icon-md-variant-1-size - 4;
+  font-size: $icon-md-variant-1-fz;
+  border-width: 2px;
+}
+
+.icon-lg {
+  width: $icon-lg-size;
+  height: $icon-lg-size;
+  line-height: $icon-lg-size - 4;
+  font-size: $icon-lg-fz;
+  border-width: 2px;
+}
+
+.icon-xl{
+  width: $icon-xl-size;
+  height: $icon-xl-size;
+  line-height: $icon-xl-size - 4;
+  font-size: $icon-xl-fz;
+  border-width: 2px;
+}
+
+
+// Icon Appearance Styles
+.icon-default {
+  color: #fff;
+  border-color: #fff;
+  background: transparent;
+  border-width: 4px;
+}
+
+.icon-default-variant-2 {
+  color: #fff;
+  border-color: transparent;
+}
+
+.icon-primary {
+  color: #FFF;
+  background: $primary;
+  border-color: $primary;
+  box-shadow: $box-shadow-key-small;
+}
+
+
+a {
+  &.icon-default:hover {
+  }
+
+  &.icon-default:hover {
+    color: #fff;
+    border-color: lighten(saturate(adjust_hue($contrast, 276), 11.627906976744185%), 16.862745098039216%);
+    background: lighten(saturate(adjust_hue($contrast, 276), 11.627906976744185%), 16.862745098039216%);
+  }
+
+  &.icon-default-variant-2:hover {
+    color: rgba(#fff, 0.6);
+  }
+
+
+  &.icon-primary:hover {
+    background: darken($primary, 5%);
+  }
+}
+/* 
+// Social Icons Styles
+.icon-xs.fa-facebook,
+.icon-sm.fa-facebook,
+.icon-md.fa-facebook,
+.icon-lg.fa-facebook,
+.icon-xl.fa-facebook {
+  color: #FFF;
+  background: #3B579D;
+
+  &:hover {
+    background: darken(#3B579D, 5%);
+  }
+}
+
+.icon-xs.fa-twitter,
+.icon-sm.fa-twitter,
+.icon-md.fa-twitter,
+.icon-lg.fa-twitter,
+.icon-xl.fa-twitter {
+  color: #FFF;
+  background: #5EA9DD;
+
+  &:hover {
+    background: darken(#5EA9DD, 5%);
+  }
+}
+
+.icon-xs.fa-google-plus,
+.icon-sm.fa-google-plus,
+.icon-md.fa-google-plus,
+.icon-lg.fa-google-plus,
+.icon-xl.fa-google-plus {
+  color: #FFF;
+  background: #DF4A32;
+
+  &:hover {
+    background: darken(#DF4A32, 5%);
+  }
+}
+ */
+
+
