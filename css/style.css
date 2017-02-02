@@ -9137,18 +9137,12 @@ html:not(.lt-ie10) .not-animated {
 /*
 * @subsection audio player
 */
-.audio-player {
-  padding: 43px 110px 49px 71px;
-  padding: 20px; }
-  @media (min-width: 992px) {
-    .audio-player {
-      padding: 31px 110px 31px 71px; } }
-  .audio-player iframe#audio-player-iframe {
-    width: 100%;
-    height: 188px;
-    overflow: hidden; }
-  .audio-player iframe #widget .g-background-default {
-    background: none !important; }
+.audio-player iframe#audio-player-iframe {
+  width: 100%;
+  height: 188px;
+  overflow: hidden; }
+.audio-player iframe #widget .g-background-default {
+  background: none !important; }
 
 /*
 * @subsection   Link
@@ -11127,5 +11121,32 @@ img.mfp-img {
     color: rgba(255, 255, 255, 0.6); }
   .page-footer p + .rd-mailform {
     margin-top: 55px; }
+
+.test {
+  margin: 1em 0; }
+
+blockquote {
+  background: transparent;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’"; }
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 3.5em;
+  line-height: 0.1em;
+  vertical-align: -0.4em; }
+
+blockquote p {
+  display: inline;
+  font-size: 2em;
+  line-height: 1.1;
+  color: lightblue;
+  text-align: center; }
+
+.rd-mailform label textarea {
+  background: transparent;
+  padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
