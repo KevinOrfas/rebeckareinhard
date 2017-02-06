@@ -30,3 +30,15 @@ blockquote p {
     background: transparent;
     padding: 0;
 }
+
+.event-wrapper .event .event-block time {
+  font-size: 30px;
+}
+
+.event-block .heading-4 {
+  text-decoration: line-through;
+  font-size: 20px;
+  &.first-child {
+    text-decoration: line-through;
+  }
+}
