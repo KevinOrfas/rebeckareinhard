@@ -3,5 +3,5 @@
 
 #Mac OS 
 .DS_Store
-.sass-cache
+.sass-cache/
 node_modules
