@@ -42,3 +42,17 @@ blockquote p {
     text-decoration: line-through;
   }
 }
+
+.img-wrapper {
+  background: url('../images/page-1_img09.jpg') no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.rd-parallax-layer[data-url] {
+  background-position: 210px 1450px;
+}
+
+.rd-parallax-layer--footer {
+  background-position: -250px 1350px !important;
+}
